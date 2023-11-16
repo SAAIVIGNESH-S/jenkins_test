@@ -7,30 +7,25 @@ pipeline {
 
   stages {
     stage('Checkout') {
-      steps {
-        script {
-          checkout scm
+        steps {
+            script {
+                checkout scm
+            }
         }
-      }
     }
 
     stage('Install Dependencies') {
-      steps {
-        script {
-          // Use the package manager for your project (npm or yarn)
-          sh 'npm install'
+        steps {
+            sh 'npm run build'
         }
-      }
     }
 
     stage('Lint and Format') {
-      steps {
-        script {
-          sh 'npm install -g eslint prettier'
-          sh 'eslint .'
-          sh 'prettier --check .'
+        steps {
+            sh 'npm install -g eslint prettier'
+            sh 'eslint .'
+            sh 'prettier --check .'
         }
-      }
     }
 
     // stage('Build') {
