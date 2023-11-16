@@ -8,6 +8,7 @@ module.exports = {
     "plugin:react/recommended",
     "prettier",
   ],
+  plugins: ["prettier"],
   overrides: [
     {
       env: {
